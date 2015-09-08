@@ -70,12 +70,15 @@ public class RevealLaunched extends AppCompatActivity {
                             mSnapshot.measure(widthSpec, heightSpec);
                             mSnapshot.layout(0, 0, width, height);
                             mSnapshot.setTransitionName("snapshot");
+
+
                             if (relayoutContainer) {
                                 ViewGroup container = (ViewGroup) findViewById(R.id.container);
                                 int left = (container.getWidth() - width) / 2;
                                 int top = (container.getHeight() - height) / 2;
                                 element.measure(widthSpec, heightSpec);
                                 element.layout(left, top, left + width, top + height);
+
                             }
                             element.addView(mSnapshot, layoutParams);
                             break;
